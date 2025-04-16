@@ -8,7 +8,7 @@ def plot_forecast(forecast_df, historical_df):
     fig = go.Figure()
 
     if 'date' not in historical_df.columns:
-        raise ValueError("❌ 'date' column missing in historical data!")
+        raise ValueError("'date' column missing in historical data!")
 
     # Plot historical
     fig.add_scatter(x=historical_df['date'], y=historical_df['total_cases'], name='Historical')

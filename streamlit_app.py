@@ -16,14 +16,13 @@ selected_tab = st.sidebar.radio("Choose Task", [
     "About Project"
 ])
 
-# --- Home Tab ---
 if selected_tab == "Home":
     st.title("Welcome to the Disease Forecast Dashboard")
     st.markdown("""
     This dashboard forecasts disease spread using historical data for:
-    - 🦟 Dengue
-    - 🦠 Influenza
-    - 🧍‍♂️ COVID-19
+    - Dengue
+    - Influenza
+    - COVID-19
 
     Built with XGBoost, Random Forest, and time series modeling. View national and regional trends.
     """)
@@ -50,7 +49,7 @@ elif selected_tab == "Predict Cases":
 
     if st.button("Predict"):
         prediction = model.predict([lags])[0]
-        st.success(f"🧮 Predicted next week cases: **{round(prediction)}**")
+        st.success(f"Predicted next week cases: **{round(prediction)}**")
 
 # --- Region-wise Visualization Tab ---
 elif selected_tab == "Region-wise Visualization":
@@ -66,7 +65,7 @@ elif selected_tab == "Region-wise Visualization":
         else:
             show_region_trend()
     else:
-        st.warning(f"⚠️ Regional data not available for {disease}.")
+        st.warning(f" Regional data not available for {disease}.")
 
 # --- About Tab ---
 elif selected_tab == "About Project":
